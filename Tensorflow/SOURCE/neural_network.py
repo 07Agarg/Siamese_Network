@@ -10,8 +10,8 @@ import config
 
 class Hidden_Layer:
     def __init__(self, shape):
-        self.weight = tf.get_Variable(tf.truncated_normal_initializer(shape=shape ,stddev=0.01, mean = 0))
-        self.bias = tf.get_Variable(tf.constant(0.1, shape = [shape[1]]))
+        self.weight = tf.get_variable(tf.truncated_normal_initializer(shape=shape ,stddev=0.01, mean = 0))
+        self.bias = tf.get_variable(tf.constant(0.1, shape = [shape[1]]))
         
     def feed_forward(self, input_):
         output_ = tf.nn.relu(tf.add(tf.matmul(input_, self.weight), self.bias))
@@ -19,8 +19,8 @@ class Hidden_Layer:
     
 class Outer_Layer:
     def __init__(self, shape):
-        self.weight = tf.get_Variable(tf.random_normal(shape=shape,stddev=0.01, mean = 0))
-        self.bias = tf.get_Variable(tf.constant(0.1, shape=[shape[1]]))
+        self.weight = tf.get_variable(tf.random_normal(shape=shape,stddev=0.01, mean = 0))
+        self.bias = tf.get_variable(tf.constant(0.1, shape=[shape[1]]))
         
     def feed_forward(self, input_):
         output_ = tf.add(tf.matmul(input_, self.weight), self.bias)

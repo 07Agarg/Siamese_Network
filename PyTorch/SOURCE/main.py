@@ -9,7 +9,6 @@ os.environ["CUDA_VISIBLE_DEVICES"]="1"
 import data
 import model
 import config
-import datetime
 import tensorflow as tf
 import utils 
 
