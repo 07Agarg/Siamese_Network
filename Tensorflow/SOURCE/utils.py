@@ -4,39 +4,6 @@ Created on Thu Feb 12 17:55:53 2019
 
 @author: ashima.garg
 """
-"""
-from tensorflow.examples.tutorials.mnist import input_data
-import config
-import numpy as np
-import matplotlib
-matplotlib.use('Agg')
-import matplotlib.pyplot as plt
-import os
-def visualize(embed, labels):
-
-    labelset = set(labels.tolist())
-
-    fig = plt.figure(figsize=(8,8))
-    ax = fig.add_subplot(111)
-
-    #fig, ax = plt.subplots()
-    for label in labelset:
-        indices = np.where(labels == label)
-        ax.scatter(embed[indices,0], embed[indices,1], label = label, s = 20)
-    ax.legend()
-    fig.savefig(os.path.join(config.OUT_DIR, 'embed.jpg'), format='jpeg', dpi=600, bbox_inches='tight')
-    plt.close()
-
-mnist = input_data.read_data_sets(config.DATA_DIR, one_hot = False)
-
-mnist_test_labels = mnist.test.labels
-
-embed = np.fromfile(os.path.join(config.OUT_DIR, 'embed.txt'), dtype = np.float32)
-embed = embed.reshape([-1, 2])
-
-visualize(embed, mnist_test_labels)
-"""
-
 from tensorflow.examples.tutorials.mnist import input_data
 
 import numpy as np
@@ -49,10 +16,6 @@ import config
 
 def visualize(x_test, y_test):
 
-    # two ways of visualization: scale to fit [0,1] scale
-    # feat = embed - np.min(embed, 0)
-    # feat /= np.max(feat, 0)
-    # two ways of visualization: leave with original scale
     x_test = x_test.reshape([-1, 28, 28])
     embed = np.fromfile(os.path.join(config.OUT_DIR, 'embed.txt'), dtype=np.float32)
     embed = embed.reshape([-1, 2])
@@ -80,21 +43,11 @@ def visualize(x_test, y_test):
         ax.add_artist(imagebox)
 
     plt.axis([ax_min[0], ax_max[0], ax_min[1], ax_max[1]])
-    # plt.xticks([]), plt.yticks([])
     plt.title('Embedding from the last layer of the network')
     plt.show()
     plt.savefig(os.path.join(config.OUT_DIR, 'embed.jpg'), format='jpeg', dpi=600, bbox_inches='tight')
-    #print("complete")
-"""
-if __name__ == "__main__":
-
-    mnist = input_data.read_data_sets(config.DATA_DIR, one_hot=False)
-    x_test = mnist.test.images
-    y_test = mnist.test.labels
-    x_test = x_test.reshape([-1, 28, 28])
-
-    embed = np.fromfile(os.path.join(config.OUT_DIR, 'embed.txt'), dtype=np.float32)
-    embed = embed.reshape([-1, 2])
-
-    visualize(embed, x_test, y_test)
-"""
+    
+    # two ways of visualization: scale to fit [0,1] scale
+    # feat = embed - np.min(embed, 0)
+    # feat /= np.max(feat, 0)
+    # two ways of visualization: leave with original scale

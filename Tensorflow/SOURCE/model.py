@@ -50,23 +50,13 @@ class MODEL():
             session.run(init)
             print("Variables initialized.... ")
             for epoch in range(config.NUM_EPOCHS):
-                #cost = 0
-                #total_batch = int(data.size/config.BATCH_SIZE)
-                #for i in range(total_batch):
                 batch_X1, batch_X2, batch_label = data.generate_train_batch()
-                #print("label.shape " + str(batch_label.shape)) 
-                #print("type label: "+str(type(batch_label.shape)))
-                #print("self.labels shape: "+str(self.labels.get_shape()))
                 feed_dict = {self.inputs_1: batch_X1, self.inputs_2: batch_X2, self.labels: batch_label}
                 loss_val, _ = session.run([self.loss, optimizer], feed_dict = feed_dict)
                 if epoch % 500 == 0:
                     print('Epoch: %d Loss: %.3f' % (epoch, loss_val))
-                   # print('Epoch: %d Loss: %.3f', %(epoch, loss_val))
-                #cost += (loss_val/total_batch)
-                    #print("Epoch: ", (epoch+1))
             self.save_path = saver.save(session, os.path.join(config.MODEL_DIR, "model" + str(config.BATCH_SIZE) + "_" + str(config.NUM_EPOCHS) + ".ckpt"))    
             print("Model saved in path: %s " % self.save_path)
-            #saver.save(session, os.path.join(config.MODEL_DIR, "model.ckpt"))
             
     def test(self, input_1):
         with tf.Session() as session:

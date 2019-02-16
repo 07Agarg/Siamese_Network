@@ -44,16 +44,3 @@ class DATA():
         label = (label_1 == label_2).astype('float32')
         print("label.shape " + str(label.shape))
         return input_1, input_2, label
-        
-        """
-        for i in range(self.batch_size):
-            filename = os.path.join(config.DATA_DIR, self.dir_path, self.filelist[self.data_index])
-            filelist.append(self.filelist[self.data_index])
-            greyimg, colorimg = self.read_img(filename)
-            batch.append(greyimg)
-            labels.append(colorimg)
-            self.data_index = (self.data_index + 1) % self.size
-        batch = np.asarray(batch)/255
-        labels = np.asarray(labels)/255
-        return batch, labels, filelist
-"""

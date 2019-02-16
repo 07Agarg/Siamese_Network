@@ -5,7 +5,6 @@ Created on Thu Feb 12 17:55:53 2019
 @author: ashima.garg
 """
 import os
-#os.environ["CUDA_VISIBLE_DEVICES"]="1"
 import data
 import model
 import tensorflow as tf
@@ -22,10 +21,8 @@ if __name__ == "__main__":
         
     with tf.variable_scope("siamese") as scope:
         model.output_1 = model.build(model.inputs_1)
-        #print("model.output1 "+str(model.output_1.get_shape()))
         scope.reuse_variables()
         model.output_2 = model.build(model.inputs_2)
-        #print("model.output2 "+str(model.output_2.get_shape()))
             
     print("Model Built")
     # TRAIN MODEL
