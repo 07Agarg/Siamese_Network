@@ -25,8 +25,9 @@ class DATA():
         self.dataset = input_data.read_data_sets(config.DATA_DIR, one_hot = False)
         
     def read_test(self):
-        test_data = self.dataset.test.images
-        return test_data
+        test_data_x = self.dataset.test.images
+        test_data_y = self.dataset.test.labels
+        return test_data_x, test_data_y
         
     def generate_train_batch(self):
    #     batch = []

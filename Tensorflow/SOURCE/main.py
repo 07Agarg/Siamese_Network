@@ -22,18 +22,21 @@ if __name__ == "__main__":
         
     with tf.variable_scope("siamese") as scope:
         model.output_1 = model.build(model.inputs_1)
+        #print("model.output1 "+str(model.output_1.get_shape()))
         scope.reuse_variables()
         model.output_2 = model.build(model.inputs_2)
+        #print("model.output2 "+str(model.output_2.get_shape()))
             
     print("Model Built")
     # TRAIN MODEL
     model.train(data_)
     print("Model Trained")
     # TEST MODEL
-    test_data = data_.read_test()
+    test_data_x, test_data_y = data_.read_test()
     print("Test Data Loaded")
-    model.test(test_data)
+    model.test(test_data_x)
     print("Embedding File Created")
-    #utils.visualize()
+    utils.visualize(test_data_x, test_data_y)
+    print("Visualization Created")
 
 

@@ -5,17 +5,15 @@ Created on Thu Feb 12 17:55:53 2019
 @author: ashima.garg
 """
 import os
-os.environ["CUDA_VISIBLE_DEVICES"]="1"
 import data
 import model
 import config
-import tensorflow as tf
 import utils 
 
 if __name__ == "__main__":
     # READ DATA
     data_ = data.DATA()
-    data_.read()
+    train_dataset = data.read(True)
     print("Train Data Loaded")
     # BUILD MODEL
     model = model.MODEL()
@@ -31,10 +29,8 @@ if __name__ == "__main__":
     model.train(data_)
     print("Model Trained")
     # TEST MODEL
-    test_data = data_.read_test()
+    test_dataset = data.read(False)
     print("Test Data Loaded")
     model.test(test_data)
     print("Embedding File Created")
     utils.visualize()
-
-

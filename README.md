@@ -12,9 +12,9 @@ For practice, this network is tested on simplest MNIST DATASET, trying to repres
 3-layer fully connected neural network with shared weights. 
 
 ### REQUIREMENTS:
-The repository contains both PYTORCH and TENSORFLOW models . 
-Python 3.6
-Tensorflow / PyTorch
+The repository contains both PYTORCH and TENSORFLOW models . <br />
+Python 3.6 <br />
+Tensorflow / PyTorch <br />
 
 
 
