@@ -4,8 +4,6 @@ Created on Thu Feb 12 17:55:53 2019
 
 @author: ashima.garg
 """
-from tensorflow.examples.tutorials.mnist import input_data
-
 import numpy as np
 import matplotlib.pyplot as plt
 from matplotlib import offsetbox

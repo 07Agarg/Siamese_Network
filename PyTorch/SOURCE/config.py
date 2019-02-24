@@ -8,7 +8,6 @@ Created on Thu Feb 12 17:55:53 2019
 import os
 
 # DIRECTORY INFORMATION
-DATASET = "Dogs"
 ROOT_DIR = os.path.abspath('../')
 DATA_DIR = os.path.join(ROOT_DIR, 'DATASET/')
 OUT_DIR = os.path.join(ROOT_DIR, 'RESULT/')
@@ -26,7 +25,7 @@ SEED = 128
 
 # TRAINING INFORMATION
 USE_PRETRAINED = False
-NUM_EPOCHS = 100
+NUM_EPOCHS = 10000
 LEARNING_RATE = 0.01
 SHAPE = [(IMAGE_SIZE, 1024), (1024, 1024), (1024, 2)]
-
+MARGIN = 5.0

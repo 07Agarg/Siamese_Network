@@ -16,6 +16,17 @@ The repository contains both PYTORCH and TENSORFLOW models . <br />
 Python 3.6 <br />
 Tensorflow / PyTorch <br />
 
+### LOSS:	
+Training Data: <br />
+Epoch: 48500 Loss: 0.075 <br />
+Epoch: 49000 Loss: 0.095 <br />
+Epoch: 49500 Loss: 0.053 <br />
+
+
+### REFERENCES:
+For Visualization, I used the code of the following repo: https://github.com/ywpkwon/siamese_tf_mnist/blob/master/visualize.py
+
+
 
 
 
