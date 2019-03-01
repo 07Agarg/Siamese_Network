@@ -85,6 +85,7 @@ class Operators():
             self.optimizer.zero_grad()
             out_1, out_2 = self.net.forward(X_1, X_2)
             loss_val = self.loss.forward(out_1, out_2, Y)
+            loss_val.backward()
             self.optimizer.step()
             if epoch % 500 == 0:
                 print('Epoch: %d Loss: %.3f' % (epoch, loss_val))
@@ -97,9 +98,10 @@ class Operators():
         print("dataX type " +str(type(dataX)))
         #input_1 = Variable(torch.Tensor(dataX).float())
         #print("input_1 type " + str(type(input_1)))
-        
         dataX = dataX.reshape(dataX.size()[0], -1)
-        dataX = Variable(dataX.float(), volatile = True)
+        #print("dataX type " + str(type(dataX)))
+        #dataX = Variable(torch.Tensor(dataX).float())
+        #dataX = Variable(torch.Tensor(dataX).float())
         print("dataX shape " + str(dataX.shape))
         output = self.net.forward_once(dataX)
         output.data.numpy().tofile(os.path.join(config.OUT_DIR, 'embed.txt'))
