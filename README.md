@@ -34,11 +34,11 @@ Epoch: 49500 Loss: 0.051 <br />
 
 ### RESULT:
 Tensorflow:
-
+![Tensorflow Output Image](https://github.com/07Agarg/Siamese_Network/blob/master/Tensorflow/RESULT/embed.jpg)
 
 
 PyTorch:
-
+![PyTorch Output Image](https://github.com/07Agarg/Siamese_Network/blob/master/PyTorch/RESULT/embed.jpg)
 
 
 ### REFERENCES:
