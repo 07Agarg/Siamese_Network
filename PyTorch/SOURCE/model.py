@@ -75,8 +75,7 @@ class Operators():
         self.optimizer = torch.optim.SGD(self.net.parameters(), lr = config.LEARNING_RATE)
         
     def train(self, data):
-        #train_loader = torch.utils.data.DataLoader(dataset = data, batch_size = config.BATCH_SIZE, shuffle = True)
-        
+        #train_loader = torch.utils.data.DataLoader(dataset = data, batch_size = config.BATCH_SIZE, shuffle = True)        
         for epoch in range(config.NUM_EPOCHS):
             input_1, input_2, out = data.generate_batch()
             X_1 = Variable(torch.Tensor(input_1).float())

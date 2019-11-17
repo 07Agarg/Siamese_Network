@@ -13,37 +13,8 @@ from torch.utils.data import DataLoader
 import torch
 from torch.utils.data.dataset import Dataset
 from tensorflow.examples.tutorials.mnist import input_data
-"""
-from tensorflow.examples.tutorials.mnist import input_data
-import numpy as np
-import config
-
 
 class DATA():
-
-    def __init__(self):
-        self.data_index = 0
-        self.dataset = None
-
-    def read(self):
-        self.dataset = input_data.read_data_sets(config.DATA_DIR, one_hot = False)
-        
-    def read_test(self):
-        test_data_x = self.dataset.test.images
-        test_data_y = self.dataset.test.labels
-        return test_data_x, test_data_y
-        
-    def generate_batch(self):
-        input_1, label_1 = self.dataset.train.next_batch(config.BATCH_SIZE)
-        input_2, label_2 = self.dataset.train.next_batch(config.BATCH_SIZE)
-        label = (label_1 == label_2).astype('float32')
-        return input_1, input_2, label
-
-
-
-
-"""
-class DATA( ):
 
     def __init__(self):
         #self.dir_path = os.path.join(config.DATA_DIR, dirname)
