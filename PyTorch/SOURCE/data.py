@@ -4,15 +4,15 @@ Created on Thu Feb 12 17:55:53 2019
 
 @author: ashima.garg
 """
-import torchvision.transforms as transforms
-from torchvision.datasets import MNIST
-import numpy as np
 import os
 import config
-from torch.utils.data import DataLoader
+import numpy as np
 import torch
+from torch.utils.data import DataLoader
 from torch.utils.data.dataset import Dataset
 from tensorflow.examples.tutorials.mnist import input_data
+import torchvision.transforms as transforms
+from torchvision.datasets import MNIST
 
 class DATA():
 
