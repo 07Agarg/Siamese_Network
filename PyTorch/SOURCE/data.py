@@ -17,9 +17,6 @@ from torchvision.datasets import MNIST
 class DATA():
 
     def __init__(self):
-        #self.dir_path = os.path.join(config.DATA_DIR, dirname)
-        #self.filelist = os.listdir(self.dir_path)
-        #self.size = len(self.filelist)
         self.batch_size = config.BATCH_SIZE
         self.transform = None
         self.data_index = 0
